@@ -1,0 +1,50 @@
+<div class="container">
+
+    <div class="image-container">
+        <img src="assets/astuce.PNG" alt="" class="logo">
+    </div>
+    <div class="form-container">
+      <h2 class="from-title">Connectez-vous</h2>
+      <form [formGroup]="monFormulaire" (ngSubmit)="onSubmit()">
+        <span>{{loginError}}</span>
+        <div class="form-group">
+          <i class="fas fa-user"></i>
+          <input type="text" name="name" formControlName="name" id="name" (focus)="onFocus()" (blur)="onBlur()" [ngClass]="{'has-error':monFormulaire.get('name')?.invalid && (monFormulaire.get('name')?.dirty || monFormulaire.get('name')?.touched) }">
+          <div *ngIf="monFormulaire.get('name')?.invalid && (monFormulaire.get('name')?.dirty || monFormulaire.get('name')?.touched)" class="error-message">
+              <span *ngIf="monFormulaire.get('name')?.hasError('required')">Le nom est requis.</span>
+              <span *ngIf="monFormulaire.get('name')?.hasError('minlength')">Le nom doit comporter au moins 3 caracteres </span>
+              <span *ngIf="monFormulaire.get('name')?.hasError('pattern')">Le doit pas avoir des caracteres speciaux</span>
+          </div>
+          <label for="name" [class.up]="placeHolderup">Nom</label>
+          
+         </div>
+         <div class="form-group">
+          <i class="fas fa-envelope"></i>
+          <input type="email" name="email"  formControlName="email"  id="email" (focus)="onFocus()" (blur)="onBlur()" [ngClass]="{'has-error':monFormulaire.get('email')?.invalid && (monFormulaire.get('email')?.dirty || monFormulaire.get('email')?.touched)}">
+          <div *ngIf="monFormulaire.get('email')?.invalid && (monFormulaire.get('email')?.dirty || monFormulaire.get('email')?.touched)" class="error-message">
+            <span *ngIf="monFormulaire.get('email')?.hasError('required')">L'email est requis.</span>
+            <span *ngIf="monFormulaire.get('email')?.hasError('email')">l'email doit etre au format valide</span>
+
+        </div>
+
+          <label for="email" [class.up]="placeHolderup">E-mail</label>
+         </div>
+         <div class="form-group">
+          <input type="password" name="password"  formControlName="password"  id="password" (focus)="onFocus()" (blur)="onBlur()" [ngClass]="{'has-error': monFormulaire.get('password')?.invalid && (monFormulaire.get('password')?.dirty || monFormulaire.get('password')?.touched)}">
+          <div *ngIf="monFormulaire.get('password')?.invalid && (monFormulaire.get('password')?.dirty || monFormulaire.get('password')?.touched)" class="error-message">
+            <span *ngIf="monFormulaire.get('password')?.hasError('required')">Le password est requis.</span>
+            <span *ngIf="monFormulaire.get('password')?.hasError('minlength')"> au moins 8 caracteres requis</span>
+          </div>
+          <label for="password" [class.up]="placeHolderup">Password</label>
+         </div>
+         <div class="form-group">
+           <button type="submit">Connexion</button>
+         </div>
+      </form>
+    </div>
+
+</div>
+
+
+
+

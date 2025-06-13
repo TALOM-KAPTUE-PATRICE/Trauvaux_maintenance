@@ -1,0 +1,35 @@
+<div mat-dialog-title>
+   <h1>Besoin</h1>
+</div>
+<form [formGroup]="ticketForm" (ngSubmit)="createBesoin()">
+<div mat-dialog-content>
+     <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Désignation</mat-label>
+        <input matInput type="text" name="designation" formControlName="designation" placeholder="designation" required>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Quantité</mat-label>
+        <input matInput type="number" name="quantite" formControlName="quantite" placeholder="Quantité" required>
+      </mat-form-field>
+     </div>
+
+     <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Prix unitaire</mat-label>
+        <input matInput type="number" name="prix" formControlName="prix" placeholder="prix" required>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Ticket Concerner</mat-label>
+       <mat-select formControlName="ticked_id"  name="ticket_id" placeholder="ticked_id" required>
+           <mat-option *ngFor="let d of tickets" [value]="d.id">{{ d.descriptinT }}</mat-option>
+       </mat-select>
+      </mat-form-field>
+     </div>
+</div>
+<div mat-dialog-actions>
+   <button mat-raised-button>Annuler</button>
+   <button mat-raised-button color="primary">Enregistrer</button>
+</div>
+</form>
+

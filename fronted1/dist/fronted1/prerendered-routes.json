@@ -1,0 +1,13 @@
+{
+  "routes": [
+    "/besoins",
+    "/bonCommandes",
+    "/compte",
+    "/dashboard",
+    "/demandeAchats",
+    "/devis",
+    "/factures",
+    "/profil",
+    "/tickets"
+  ]
+}

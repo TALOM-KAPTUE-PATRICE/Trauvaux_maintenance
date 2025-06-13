@@ -1,0 +1,35 @@
+
+<app-header></app-header>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Description devis</th>
+      <th>Numero Devis</th>
+      <th>Type de Travaux</th>
+      <th>Contrainte devis</th>
+      <th>Effectifs </th>
+      <th>Duree Livraison(en jrs)</th>
+      <th>designation besoin</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let devis of devis">
+      <td>{{ devis.id }}</td>
+      <td>{{ devis.descriptionDevis }}</td>
+      <td>{{ devis.numeroDevis }}</td>
+      <td>{{ devis.typeTravaux}}</td>
+      <td>{{ devis.contrainteDev}}</td>
+      <td>{{ devis.effectifP}}</td>
+      <td>{{ devis.dureeLivrais}}</td>
+      <td>{{ devis.besoin.designationB}}</td>
+      <td>
+        <button class="btn btn-primary" (click)="editDevis(devis.id)" ><i class="fas fa-pencil-alt"></i></button>
+        <button class="btn btn-danger" (click)="deleteDevis(devis.id)" ><i class="fas fa-trash"></i></button>
+        <button type="submit" class="btn btn-secondary" (click)="impression(devis.id)" ><i class="fas fa-print" ></i></button>
+      </td>
+
+    </tr>
+  </tbody>
+</table>

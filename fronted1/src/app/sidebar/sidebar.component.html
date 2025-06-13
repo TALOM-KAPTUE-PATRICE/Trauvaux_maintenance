@@ -1,0 +1,13 @@
+<div class="sidebar" [ngClass]="{'sidebar-collapsed':sidebarcollapsed}">
+  <div class="logo" [ngClass]="{'hidden': sidebarcollapsed}">
+    <img src="assets/logo.JPG" alt="logo de l'application">
+  </div>
+  <ul class="links" [ngClass]="{'hidden': sidebarcollapsed}">
+    <li *ngFor="let link of links" (mouseover)="link.hovered=true" (mouseout)="link.hovered=false" [ngClass]="{'active':link.hovered}">
+      <a href="#" ngClass="nav-link"> <i [ngClass]="link.iconClass"></i> {{link.title}}</a>
+    </li>
+  </ul>
+  <div class="toggle-icon" (click)="toggleSidebar()" >
+      <i class="fas fa-bars" ></i>
+  </div>
+</div>

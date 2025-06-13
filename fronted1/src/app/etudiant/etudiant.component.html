@@ -1,0 +1,37 @@
+<div>
+  <form [formGroup]="etudiant" (ngSubmit)="create()">
+     <div>
+      <label for="">Nom:</label>
+      <input type="text" name="nom" id="" formControlName="nom">
+     </div>
+
+     <div>
+      <label for="">Prenom:</label>
+      <input type="text" name="nom" id="" formControlName="prenom">
+     </div>
+
+     <div>
+      <label for="">Email:</label>
+      <input type="text" name="nom" id="" formControlName="email">
+     </div>
+   <button type="submit" [disabled]="!etudiant.valid">Envoyer</button>
+  </form>
+</div>
+
+<table border="1">
+  <thead>
+   <tr>
+    <th>Nom</th>
+    <th>Prenom</th>
+    <th>Email</th>
+   </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let etu of donnees">
+        <td>{{etu.nom}}</td>
+        <td>{{etu.prenom}}</td>
+        <td>{{etu.email}}</td>
+    </tr>
+  </tbody>
+</table>
+

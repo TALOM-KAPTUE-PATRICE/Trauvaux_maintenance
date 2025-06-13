@@ -1,0 +1,31 @@
+
+<app-header></app-header>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Numero commande</th>
+      <th>Date commande</th>
+      <th>Mode paiement</th>
+      <th>Code projet</th>
+      <th>Date livraison</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ticket of commande">
+      <td>{{ ticket.id }}</td>
+      <td>{{ ticket.numeroBon }}</td>
+      <td>{{ ticket.dateCommande }}</td>
+      <td>{{ ticket.modePaiement}}</td>
+      <td>{{ ticket.codeProjet}}</td>
+      <td>{{ ticket.dateLivraison}}</td>
+      <td>
+        <button class="btn btn-primary" (click)="editTicket(ticket.id)" ><i class="fas fa-pencil-alt"></i></button>
+        <button class="btn btn-danger" (click)="deleteTicket(ticket.id)" ><i class="fas fa-trash"></i></button>
+        <button type="submit" class="btn btn-secondary" (click)="impression(ticket.id)" ><i class="fas fa-print" ></i></button>
+      </td>
+
+    </tr>
+  </tbody>
+</table>

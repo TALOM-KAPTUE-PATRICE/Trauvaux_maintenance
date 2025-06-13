@@ -1,0 +1,45 @@
+<div class="container">
+
+
+  <form (ngSubmit)="addStudent()" >
+
+    <div class="mb-3 mt-3">
+      <label for="name" class="from-label">name:</label>
+      <input type="text" class="form-control" id="name" placeholder="name" name="nom">
+  </div>
+
+    <div class="mb-3 mt-3">
+        <label for="email" class="from-label">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="email" name="email">
+    </div>
+    <div class="mb-3 mt-3">
+       <label for="pwd" class="from-label">conctat:</label>
+       <input type="text" class="form-control" id="pwd" placeholder="password" name="number">
+    </div>
+    <button type="submit" class="btn btn-primary">envoyer</button>
+  </form>
+  <table class="table">
+    <thead>
+      <tr>
+        <td>id</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Contact</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let st of userdata2 ">
+        <td>{{st.id}}</td>
+        <td>{{st.name}}</td>
+        <td>{{st.email}}</td>
+        <td>{{st.contact}}</td>
+
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+
+

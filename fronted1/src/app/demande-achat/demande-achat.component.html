@@ -1,0 +1,30 @@
+
+<app-header></app-header>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Service Demandeur</th>
+      <th>Numero DA</th>
+      <th>Objet du travail</th>
+      <th>Nom Fournisseur</th>
+      
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let da of Demande ">
+      <td>{{ da.id }}</td>
+      <td>{{ da.serviceDemandeur }}</td>
+      <td>{{ da.numeroDa }}</td>
+      <td>{{ da.objetTravaux}}</td>
+      <td>{{ da.nomFourniss}}</td>
+
+      <td>
+        <button class="btn btn-primary" (click)="editDa(da.id)" ><i class="fas fa-pencil-alt"></i></button>
+        <button class="btn btn-danger" (click)="deleteDa(da.id)" ><i class="fas fa-trash"></i></button>
+        <button type="submit" class="btn btn-secondary" (click)="impressionDa(da.id)" ><i class="fas fa-print" ></i></button>
+      </td>
+    </tr>
+  </tbody>
+</table>

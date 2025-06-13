@@ -1,0 +1,35 @@
+
+<app-header></app-header>
+<button mat-raised-button color="primary" (click)="openAddEditBesoinForm()">
+   Ajouter un besoin
+</button>
+
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Designation</th>
+        <th>Quantite</th>
+        <th>Prix unitaire</th>
+        <th>Titre Ticket</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let besoin of result">
+        <td>{{ besoin.id }}</td>
+        <td>{{ besoin.designationB }}</td>
+        <td>{{ besoin.quantiteB }}</td>
+        <td>{{ besoin.prixB}}</td>
+        <td>{{ besoin.ticket.titreT}}</td>
+        <td>
+          <button class="btn btn-primary" (click)="editBesoin( besoin.id )" ><i class="fas fa-pencil-alt"></i></button>
+          <button class="btn btn-danger" (click)="deleteBesoin( besoin.id )" ><i class="fas fa-trash"></i></button>
+
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
